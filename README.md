@@ -7,7 +7,7 @@
 Not the actual time taken to run the program on machine (Its not machine dependent as the program might take different time on diffrent OS or platform eg Leetcode server based).It is the amout of time taken as function of input size(n)
 
 No of operation changes as n increases.
-NOTE: we consider worst case , since if x algorithm works with 10T users perfectly , certsinly it will work for 10 users.
+NOTE: we consider worst case , since if x algorithm works with 10T users perfectly , certainly it will work for 10 users.
 
 #### SPACE COMPLEXITY
 Amout of space taken by an algorithm as function of input size (n)
