@@ -12,8 +12,10 @@ NOTE: we consider worst case , since if x algorithm works with 10T users perfect
 #### SPACE COMPLEXITY
 Amout of space taken by an algorithm as function of input size (n)
 
-code : 1. Input space (vector, array , string)
-       2. Auxiliary space ( extra space )
+code : 
+1. Input space (vector, array , string)
+
+2. Auxiliary space ( extra space )
 
 We consider only auxiliary space
        
