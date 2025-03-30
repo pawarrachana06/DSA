@@ -248,6 +248,160 @@ merge sort : TC o(n log n) SC
 
 
 
+# **Basic Data Structures in Computer Science**
+
+## **1. Introduction**
+Data structures are fundamental to organizing and managing data efficiently. The five main types of basic data structures are:
+
+- **Arrays**
+- **Linked Lists**
+- **Stacks**
+- **Queues**
+- **Hash Tables**
+
+Each of these structures has different characteristics, use cases, and advantages.
+
+---
+
+# **Arrays in Python**
+
+## **Introduction**
+An **array** is a data structure that stores multiple values of the same type in contiguous memory locations. Unlike Python lists, which can hold multiple data types, arrays ensure type consistency and optimize memory usage.
+
+Python provides arrays through the `array` module and NumPy for advanced operations.
+
+## **Types of Arrays in Python**
+1. **Lists (Built-in dynamic arrays)**
+2. **Array Module (Fixed-type arrays)**
+3. **NumPy Arrays (Multi-dimensional & optimized operations)**
+
+---
+
+## **1. Lists (Dynamic Arrays in Python)**
+Python’s built-in lists behave like dynamic arrays, supporting different data types and resizing automatically.
+
+#### **Example:**
+```python
+arr = [1, 2, 3, 4, 5]  # Creating a list
+print(arr[2])  # Accessing an element
+arr.append(6)  # Adding an element
+print(arr)
+```
+**Output:**
+```
+3
+[1, 2, 3, 4, 5, 6]
+```
+
+#### **Time Complexity (Big-O)**
+| Operation  | Complexity |
+|------------|------------|
+| Accessing an element (`arr[i]`) | O(1) |
+| Appending (`append()`) | O(1) (Amortized) |
+| Insertion (`insert(i, x)`) | O(n) |
+| Deletion (`del arr[i]`) | O(n) |
+| Searching (`x in arr`) | O(n) |
+
+---
+
+## **2. Array Module (Fixed-Type Arrays)**
+The `array` module provides efficient storage for large data sets with a single data type.
+
+#### **Example:**
+```python
+import array
+arr = array.array('i', [1, 2, 3, 4, 5])  # 'i' stands for integer
+print(arr[1])  # Accessing an element
+arr.append(6)  # Adding an element
+print(arr)
+```
+**Output:**
+```
+2
+array('i', [1, 2, 3, 4, 5, 6])
+```
+
+#### **Big-O Complexity:**
+| Operation | Complexity |
+|------------|------------|
+| Access (`arr[i]`) | O(1) |
+| Append (`arr.append(x)`) | O(1) |
+| Insert (`arr.insert(i, x)`) | O(n) |
+| Remove (`arr.remove(x)`) | O(n) |
+| Search (`x in arr`) | O(n) |
+
+---
+
+## **3. NumPy Arrays (Efficient Multi-Dimensional Arrays)**
+NumPy provides powerful operations for handling large numerical datasets.
+
+#### **Example:**
+```python
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr[1])  # Accessing an element
+arr = np.append(arr, 6)  # Adding an element
+print(arr)
+```
+**Output:**
+```
+2
+[1 2 3 4 5 6]
+```
+
+#### **Big-O Complexity:**
+| Operation | Complexity |
+|------------|------------|
+| Access (`arr[i]`) | O(1) |
+| Append (`np.append(arr, x)`) | O(n) |
+| Insert (`np.insert(arr, i, x)`) | O(n) |
+| Delete (`np.delete(arr, i)`) | O(n) |
+| Search (`np.where(arr == x)`) | O(n) |
+
+---
+
+## **4. Multi-Dimensional Arrays in Python**
+Multi-dimensional arrays store elements in matrix-like structures, commonly used in numerical computing.
+
+### **Using Lists (Nested Lists)**
+```python
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]  # 3x3 Matrix
+print(matrix[1][2])  # Accessing element at row 1, column 2
+```
+**Output:**
+```
+6
+```
+
+### **Using NumPy (Optimized for large datasets)**
+```python
+import numpy as np
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(matrix[1, 2])  # Accessing element at row 1, column 2
+```
+**Output:**
+```
+6
+```
+
+#### **Big-O Complexity for Multi-Dimensional Arrays**
+| Operation | Complexity |
+|------------|------------|
+| Access (`arr[i][j]`) | O(1) |
+| Insert/Delete (`np.insert() / np.delete()`) | O(n) |
+| Search (`np.where(arr == x)`) | O(n) |
+
+---
+
+## **Summary**
+- Python supports different types of arrays: Lists, `array` module, and NumPy.
+- Lists are dynamic but slow; `array` module provides fixed-type arrays.
+- NumPy is best for performance-critical applications and multi-dimensional arrays.
+- Big-O complexities vary depending on the type of operation performed.
+
+Let me know if you need more examples or explanations! 🚀
+
+
 
 
 
