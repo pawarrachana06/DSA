@@ -248,7 +248,113 @@ merge sort : TC o(n log n) SC
 
 
 
-# **Basic Data Structures in Computer Science**
+# **Basic Data Structures**
+
+
+![image](https://github.com/user-attachments/assets/e8d7562d-d1cf-4838-88f8-fca8515b8ce4)
+
+
+# **Linear vs Non-Linear Data Structures**
+
+## **1. Introduction**
+Data structures are categorized based on how data elements are organized. The two primary classifications are:
+- **Linear Data Structures**: Data elements are arranged sequentially.
+- **Non-Linear Data Structures**: Data elements are arranged in a hierarchical or interconnected manner.
+
+---
+## **2. Linear Data Structures**
+Linear data structures store elements in a sequential order, meaning each element has a direct relationship with its previous and next elements.
+
+### **Characteristics:**
+- Elements are stored in a linear sequence.
+- Requires more memory as the size grows.
+- Easy to implement due to sequential storage.
+
+### **Examples & Time Complexity:**
+| Data Structure | Description | Common Operations | Time Complexity |
+|---------------|------------|--------------------|-----------------|
+| **Array** | Stores elements in contiguous memory locations | Access: O(1), Insertion/Deletion: O(n), Search: O(n) |
+| **Linked List** | Elements (nodes) linked with pointers | Access: O(n), Insertion/Deletion: O(1) (at head) |
+| **Stack** | Follows LIFO (Last In, First Out) | Push: O(1), Pop: O(1), Peek: O(1) |
+| **Queue** | Follows FIFO (First In, First Out) | Enqueue: O(1), Dequeue: O(1) |
+
+### **Example of a Linear Data Structure (Stack in Python)**
+```python
+class Stack:
+    def __init__(self):
+        self.stack = []
+    
+    def push(self, item):
+        self.stack.append(item)
+    
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
+        return "Stack is empty"
+    
+    def is_empty(self):
+        return len(self.stack) == 0
+
+s = Stack()
+s.push(10)
+s.push(20)
+print(s.pop())  # Output: 20
+```
+
+---
+## **3. Non-Linear Data Structures**
+In non-linear data structures, elements are connected in a hierarchical or complex relationship, meaning they are not sequentially arranged.
+
+### **Characteristics:**
+- Elements are connected in a non-sequential manner.
+- Efficient in handling complex relationships between data.
+- Requires advanced traversal algorithms.
+
+### **Examples & Time Complexity:**
+| Data Structure | Description | Common Operations | Time Complexity |
+|---------------|------------|--------------------|-----------------|
+| **Trees** | A hierarchical structure with parent-child relationships | Access: O(log n), Insertion: O(log n), Deletion: O(log n) (for balanced trees) |
+| **Graphs** | A set of nodes (vertices) connected by edges | BFS/DFS Traversal: O(V+E) |
+| **Hash Table** | Stores key-value pairs with fast lookups | Access: O(1) (Average), O(n) (Worst case) |
+
+### **Example of a Non-Linear Data Structure (Binary Tree in Python)**
+```python
+class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+
+def inorder_traversal(root):
+    if root:
+        inorder_traversal(root.left)
+        print(root.val, end=" ")
+        inorder_traversal(root.right)
+
+root = Node(10)
+root.left = Node(5)
+root.right = Node(15)
+inorder_traversal(root)  # Output: 5 10 15
+```
+
+---
+## **4. Key Differences Between Linear and Non-Linear Data Structures**
+
+| Feature | Linear Data Structures | Non-Linear Data Structures |
+|---------|------------------------|----------------------------|
+| **Organization** | Sequential order | Hierarchical or interlinked |
+| **Traversal** | One way at a time | Multiple ways |
+| **Implementation Complexity** | Simple | Complex |
+| **Usage** | Useful for simple applications like stacks, queues | Used for complex data relationships like trees, graphs |
+
+---
+## **5. Conclusion**
+- **Linear structures** are simple and efficient for sequential operations.
+- **Non-linear structures** are better for hierarchical and interconnected data representation.
+- Choosing the right data structure depends on the problem at hand, memory constraints, and performance requirements.
+
+Let me know if you need more examples or explanations! 🚀
+
 
 ## **1. Introduction**
 Data structures are fundamental to organizing and managing data efficiently. The five main types of basic data structures are:
@@ -401,6 +507,264 @@ print(matrix[1, 2])  # Accessing element at row 1, column 2
 
 Let me know if you need more examples or explanations! 🚀
 
+
+# **Linked List in Python**
+
+## **1. Introduction**
+A **linked list** is a linear data structure where elements (nodes) are linked using pointers. Unlike arrays, linked lists do not require contiguous memory allocation, making them dynamic in size.
+
+### **Advantages:**
+- Efficient insertions and deletions (O(1) at the head).
+- No fixed size, unlike arrays.
+
+### **Disadvantages:**
+- Slower access time (O(n) vs. O(1) for arrays).
+- Uses extra memory for pointers.
+
+---
+## **2. Types of Linked Lists**
+1. **Singly Linked List**: Each node points to the next node.
+2. **Doubly Linked List**: Each node points to both next and previous nodes.
+3. **Circular Linked List**: The last node points back to the first node.
+
+---
+## **3. Implementation of Linked List in Python**
+### **3.1 Singly Linked List**
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+# Example Usage
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+ll.display()  # Output: 1 -> 2 -> 3 -> None
+```
+
+### **Time Complexity:**
+| Operation  | Complexity |
+|------------|------------|
+| Insertion at Head | O(1) |
+| Insertion at Tail | O(n) |
+| Deletion at Head | O(1) |
+| Deletion at Tail | O(n) |
+| Searching | O(n) |
+
+---
+## **3.2 Doubly Linked List**
+```python
+class DNode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = DNode(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+        new_node.prev = temp
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" <-> ")
+            temp = temp.next
+        print("None")
+
+# Example Usage
+dll = DoublyLinkedList()
+dll.append(1)
+dll.append(2)
+dll.append(3)
+dll.display()  # Output: 1 <-> 2 <-> 3 <-> None
+```
+
+---
+## **3.3 Circular Linked List**
+```python
+class CNode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class CircularLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = CNode(data)
+        if not self.head:
+            self.head = new_node
+            new_node.next = self.head
+            return
+        temp = self.head
+        while temp.next != self.head:
+            temp = temp.next
+        temp.next = new_node
+        new_node.next = self.head
+
+    def display(self):
+        if not self.head:
+            return
+        temp = self.head
+        while True:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+            if temp == self.head:
+                break
+        print("(Back to Head)")
+
+# Example Usage
+cll = CircularLinkedList()
+cll.append(1)
+cll.append(2)
+cll.append(3)
+cll.display()  # Output: 1 -> 2 -> 3 -> (Back to Head)
+```
+
+---
+## **3. Operations on Linked Lists**
+
+### **1. Insertion in a Linked List**
+Insertion can happen in three places:
+- **At the beginning** (O(1))
+- **At the end** (O(n) for singly, O(1) for doubly)
+- **At a specific position** (O(n))
+
+#### **Example: Insert at the Beginning (Singly Linked List)**
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+# Usage
+ll = LinkedList()
+ll.insert_at_beginning(10)
+ll.insert_at_beginning(20)
+ll.insert_at_beginning(30)
+ll.display()
+```
+**Output:**
+```
+30 -> 20 -> 10 -> None
+```
+
+---
+### **2. Deletion in a Linked List**
+Deletion can occur at:
+- **Beginning** (O(1))
+- **End** (O(n) for singly, O(1) for doubly)
+- **Specific position** (O(n))
+
+#### **Example: Delete at the Beginning (Singly Linked List)**
+```python
+class LinkedList:
+    def delete_at_beginning(self):
+        if self.head is None:
+            print("List is empty")
+            return
+        self.head = self.head.next
+
+# Usage
+ll.delete_at_beginning()
+ll.display()
+```
+
+---
+### **3. Traversal in a Linked List**
+Traversal means visiting each node in the list.
+
+#### **Example: Traversal (Singly Linked List)**
+```python
+def traverse(self):
+    temp = self.head
+    while temp:
+        print(temp.data, end=" -> ")
+        temp = temp.next
+    print("None")
+```
+**Time Complexity:** O(n)
+
+---
+## **4. Real-Life Applications of Linked Lists**
+| Application | Explanation |
+|------------|------------|
+| **Music Playlists** | Songs are linked to the next, allowing easy insertion/deletion. |
+| **Undo/Redo Functionality** | Doubly Linked List enables moving forward and backward. |
+| **Browser History** | Stores previous and next pages for easy navigation. |
+| **Memory Management** | Used for dynamic memory allocation and garbage collection. |
+
+---
+## **5. Time Complexity of Linked List Operations**
+| Operation | Singly Linked List | Doubly Linked List |
+|-----------|-------------------|-------------------|
+| **Insertion at Beginning** | O(1) | O(1) |
+| **Insertion at End** | O(n) | O(1) |
+| **Insertion at Position** | O(n) | O(n) |
+| **Deletion at Beginning** | O(1) | O(1) |
+| **Deletion at End** | O(n) | O(1) |
+| **Deletion at Position** | O(n) | O(n) |
+| **Traversal** | O(n) | O(n) |
+
+---
+## **6. Summary**
+- **Linked lists** store elements dynamically.
+- **Operations** include insertion, deletion, and traversal.
+- **Types**: Singly, Doubly, Circular.
+- **Used in** memory management, history tracking, and dynamic data structures.
+
+Let me know if you need more details! 🚀
 
 
 
