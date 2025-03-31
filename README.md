@@ -246,6 +246,47 @@ merge sort : TC o(n log n) SC
 ![image](https://github.com/user-attachments/assets/c1af6b5d-0fca-4719-9a07-482b7cc818a8)
 
 
+# Algorithm Time Complexity Table
+
+This table helps to decide the best algorithm based on the size of input \( n \). The suggested time complexities are the **upper bounds** that should be targeted for efficient execution.
+
+| **Constraint (n ≤ ...)** | **Best Time Complexity** | **Algorithm to Think Of** | **Additional Hints and Algorithms** |
+|--------------------------|--------------------------|---------------------------|-------------------------------------|
+| \( n > 10^8 \)            | O(log n), O(1)           | Binary Search, Hashing     | Use **hash maps** for constant time lookups and **binary search** to divide and conquer large data. |
+| \( n \leq 10^8 \)         | O(n)                     | Prefix Sum, Sliding Window | **Prefix sum** for range queries; **sliding window** for problems involving subarrays or substrings. |
+| \( n \leq 10^6 \)         | O(n log n)               | Merge Sort, QuickSort, Dijkstra | Sorting algorithms (**QuickSort**, **MergeSort**) and graph algorithms (**Dijkstra**) are efficient for up to 1 million elements. |
+| \( n \leq 10^4 \)         | O(n²)                     | DP (Floyd-Warshall, LIS), Brute Force | Dynamic Programming (**Floyd-Warshall** for shortest paths, **LIS** for longest increasing subsequences), or brute force can work for this range. |
+| \( n \leq 500 \)          | O(n³)                     | Matrix Multiplication, DP (Floyd-Warshall) | **Matrix multiplication** and **dynamic programming** algorithms work well for small \( n \). |
+| \( n \leq 25 \)           | O(2ⁿ)                     | Recursion, Backtracking, Bitmask DP | **Backtracking** for combinatorial problems, **bitmask DP** for subset problems, and **recursion** for solving smaller subproblems. |
+| \( n \leq 12 \)           | O(n!)                     | Permutations, Traveling Salesman Problem | For very small \( n \), **factorial-time algorithms** like solving **permutations** or the **Traveling Salesman Problem** are feasible. |
+
+---
+
+### **Additional Algorithms and Tips**:
+
+- **O(1) Algorithms**: Use when you need constant time operations (e.g., **hashing** for dictionary lookups or **binary search** for sorted arrays).
+- **O(n log n)**: Best for **sorting** and **divide-and-conquer** algorithms like **QuickSort**, **MergeSort**, and **HeapSort**.
+- **O(n²)**: Suitable for **brute force** or **dynamic programming** solutions when \( n \) is not too large, such as **Floyd-Warshall** for shortest paths in dense graphs.
+- **O(n³)**: Works for small \( n \) values, especially in **matrix operations** (e.g., **matrix multiplication**) or **dynamic programming** solutions (e.g., **Floyd-Warshall** for all-pairs shortest paths).
+- **O(2ⁿ)**: For small \( n \) problems where you need to explore all subsets, such as **subset sum**, **backtracking**, or **bitmask dynamic programming**.
+- **O(n!)**: When \( n \) is very small (e.g., up to 12), **permutations** or **Traveling Salesman Problem (TSP)** can be solved in factorial time.
+
+### **General Guidelines**:
+- **For very large data** (\( n > 10^8 \)): Aim for **logarithmic time** or **constant time** solutions (e.g., **binary search**, **hashing**).
+- **For medium to large inputs** (\( n \leq 10^6 \)): **Sorting algorithms** and **graph algorithms** (e.g., **Dijkstra**) are usually good choices.
+- **For small inputs** (\( n \leq 500 \)): You can afford algorithms with **quadratic** or **cubic time complexity** like **matrix multiplication** or **Floyd-Warshall**.
+
+---
+
+### Conclusion:
+
+- **Use the smallest time complexity** that can still solve the problem efficiently for the given input size \( n \).
+- **As the input size increases**, prioritize algorithms that reduce the number of operations, such as **binary search**, **divide-and-conquer**, or **hashing**.
+- **For small input sizes**, you can afford to use more exhaustive approaches like **dynamic programming** or **backtracking**.
+
+This table serves as a guide to help you make the best choice for algorithm selection based on input size and time complexity considerations.
+
+
 
 
 # **Basic Data Structures**
