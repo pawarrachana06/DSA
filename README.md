@@ -245,7 +245,6 @@ merge sort : TC o(n log n) SC
 #### ! MOST IMPORTANT
 ![image](https://github.com/user-attachments/assets/c1af6b5d-0fca-4719-9a07-482b7cc818a8)
 
-
 # Algorithm Time Complexity Table
 
 This table helps to decide the best algorithm based on the size of input \( n \). The suggested time complexities are the **upper bounds** that should be targeted for efficient execution.
@@ -253,12 +252,13 @@ This table helps to decide the best algorithm based on the size of input \( n \)
 | **Constraint (n ≤ ...)** | **Best Time Complexity** | **Algorithm to Think Of** | **Additional Hints and Algorithms** |
 |--------------------------|--------------------------|---------------------------|-------------------------------------|
 | \( n > 10^8 \)            | O(log n), O(1)           | Binary Search, Hashing     | Use **hash maps** for constant time lookups and **binary search** to divide and conquer large data. |
-| \( n \leq 10^8 \)         | O(n)                     | Prefix Sum, Sliding Window | **Prefix sum** for range queries; **sliding window** for problems involving subarrays or substrings. |
-| \( n \leq 10^6 \)         | O(n log n)               | Merge Sort, QuickSort, Dijkstra | Sorting algorithms (**QuickSort**, **MergeSort**) and graph algorithms (**Dijkstra**) are efficient for up to 1 million elements. |
-| \( n \leq 10^4 \)         | O(n²)                     | DP (Floyd-Warshall, LIS), Brute Force | Dynamic Programming (**Floyd-Warshall** for shortest paths, **LIS** for longest increasing subsequences), or brute force can work for this range. |
-| \( n \leq 500 \)          | O(n³)                     | Matrix Multiplication, DP (Floyd-Warshall) | **Matrix multiplication** and **dynamic programming** algorithms work well for small \( n \). |
-| \( n \leq 25 \)           | O(2ⁿ)                     | Recursion, Backtracking, Bitmask DP | **Backtracking** for combinatorial problems, **bitmask DP** for subset problems, and **recursion** for solving smaller subproblems. |
-| \( n \leq 12 \)           | O(n!)                     | Permutations, Traveling Salesman Problem | For very small \( n \), **factorial-time algorithms** like solving **permutations** or the **Traveling Salesman Problem** are feasible. |
+| \( n <= 10^8 \)         | O(n)                     | Prefix Sum, Sliding Window | **Prefix sum** for range queries; **sliding window** for problems involving subarrays or substrings. |
+| \( n <= 10^6 \)         | O(n log n)               | Merge Sort, QuickSort, Dijkstra | Sorting algorithms (**QuickSort**, **MergeSort**) and graph algorithms (**Dijkstra**) are efficient for up to 1 million elements. |
+| \( n <= 10^4 \)         | O(n²)                     | DP (Floyd-Warshall, LIS), Brute Force | Dynamic Programming (**Floyd-Warshall** for shortest paths, **LIS** for longest increasing subsequences), or brute force can work for this range. |
+| \( n <= 500 \)          | O(n³)                     | Matrix Multiplication, DP (Floyd-Warshall) | **Matrix multiplication** and **dynamic programming** algorithms work well for small \( n \). |
+| \( n <= 25 \)           | O(2ⁿ)                     | Recursion, Backtracking, Bitmask DP | **Backtracking** for combinatorial problems, **bitmask DP** for subset problems, and **recursion** for solving smaller subproblems. |
+| \( n <= 12 \)           | O(n!)                     | Permutations, Traveling Salesman Problem | For very small \( n \), **factorial-time algorithms** like solving **permutations** or the **Traveling Salesman Problem** are feasible. |
+
 
 ---
 
@@ -285,6 +285,7 @@ This table helps to decide the best algorithm based on the size of input \( n \)
 - **For small input sizes**, you can afford to use more exhaustive approaches like **dynamic programming** or **backtracking**.
 
 This table serves as a guide to help you make the best choice for algorithm selection based on input size and time complexity considerations.
+
 
 
 
